@@ -1,3 +1,5 @@
+#Adya.ai - Text_Summarization tool
+
 # Text_Summarizer: A text_Summarizer built with LLM pre-trained models and Gemini AI
 🔬Text Summarization for  **Large documents**! 💫
 This tool combines pre-trained LLM models for accurate data summarization with Gemini AI for efficient processing. It also integrates the Google Custom Search API for extracting relevant reference links.
