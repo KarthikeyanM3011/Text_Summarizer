@@ -38,8 +38,8 @@ https://github.com/KarthikeyanM3011/Text_Summarizer/assets/133127501/afa01117-61
 
 # Flask Output
 
-![cb1](output/flask.png)
+![cb1](Output/flask.png)
 
 # Streamlit Output
 
-![cb1](output/streamlit.png)
+![cb1](Output/streamlit.png)
