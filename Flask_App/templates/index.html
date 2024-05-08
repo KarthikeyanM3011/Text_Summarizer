@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Summarizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .upload-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .text-area {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: left; /* Adjust text alignment for textarea */
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .expander {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">PDF Summarizer</div>
+        <div class="upload-section">
+            <label for="file">Upload PDF file:</label>
+            <input type="file" id="file" accept=".pdf">
+        </div>
+        <div id="text-area-section">
+            <textarea id="text-area" class="text-area" placeholder="Type text here"></textarea>
+        </div>
+        <button id="summarize-btn" class="button">Summarize</button>
+        <div id="input-section" class="expander" style="display: none;">
+            <h3>Given Content</h3>
+            <div id="input-text"></div>
+        </div>
+        <div id="summary-section" class="expander" style="display: none;">
+            <h3>Summarized Text</h3>
+            <div id="summary-text"></div>
+        </div>
+        <div id="links-section" class="expander" style="display: none;">
+            <h3>Related Links</h3>
+            <ul id="links"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('summarize-btn').addEventListener('click', function() {
+        var fileInput = document.getElementById('file');
+        var file = fileInput.files[0];
+        var textAreaContent = document.getElementById('text-area').value;
+
+        if (file) {
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/summarize', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('input-text').innerText = data.input;
+                document.getElementById('summary-text').innerText = data.summarized_text;
+                document.getElementById('links').innerHTML = data.urls.map(function(url) {
+                    return '<li><a href="' + url + '">' + url + '</a></li><br>';
+                }).join('');
+                document.getElementById('summary-section').style.display = 'block';
+                document.getElementById('links-section').style.display = 'block';
+
+                document.getElementById("text-area").value = "";
+                document.getElementById("file").value = "";
+            })
+            .catch(error => {
+                document.getElementById("text-area").value = "";
+                document.getElementById("file").value = "";
+                console.error('Error:', error);
+                alert("Internal Error occurred.please try again later");
+            });
+        } else if (textAreaContent.trim() !== '') {
+            var data = { data: textAreaContent }; 
+
+            fetch('/summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('input-text').innerText = data.input;
+                document.getElementById('summary-text').innerText = data.summarized_text;
+                document.getElementById('links').innerHTML = data.urls.map(function(url) {
+                    return '<li><a href="' + url + '">' + url + '</a></li>';
+                }).join('');
+                document.getElementById('summary-section').style.display = 'block';
+                document.getElementById('links-section').style.display = 'block';
+
+                document.getElementById("text-area").value = "";
+                document.getElementById("file").value = "";
+            })
+            .catch(error => {
+                document.getElementById("text-area").value = "";
+                document.getElementById("file").value = "";
+                console.error('Error:', error);
+                alert("Internal Error occurred.please try again later");
+            });
+        } else {
+            alert('Please upload a PDF file or enter text in the text area.');
+        }
+    });
+
+
+    </script>
+</body>
+</html>
