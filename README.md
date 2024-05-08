@@ -22,6 +22,7 @@ It is powered with pre-trained LLM models with high accuracy of data and also th
 
 https://github.com/KarthikeyanM3011/Text_Summarizer/assets/133127501/afa01117-618c-4f8b-86f8-16983665b552
 
+
 # Built With 🛠️
 
   1.  **Frontend - Streamlit:** The frontend user interface was developed using Streamlit, a powerful Python library for creating web applications with simple Python scripts. Streamlit's intuitive interface allowed us to design interactive and responsive user interfaces effortlessly, streamlining the development process and enhancing user experience. 💻🌐
@@ -33,3 +34,12 @@ https://github.com/KarthikeyanM3011/Text_Summarizer/assets/133127501/afa01117-61
   4.  **API's** - We have used Gemini's **[gemini-1.0-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases)** for prettifying the summary and **[Custom Search API](https://developers.google.com/custom-search/v1/introduction)** to get related reference links for more automated and efficient for learning path
 
   5.  **Other Technologies:** - In addition to streamlit , LLM models and API's we have also used **Langchain** for efficient usage of the pre-trained models and also Python a powerful language with concise and expressive syantax.it also has many built-in packages to make our work easy.🐍🚀📦
+
+
+# Flask Output
+
+![cb1](output/flask.png)
+
+# Streamlit Output
+
+![cb1](output/streamlit.png)
