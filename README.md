@@ -1,6 +1,6 @@
 # Text_Summarizer: A text_Summarizer built with LLM pre-trained models and Gemini AI
 🔬Text Summarization for  **Large documents**! 💫
-It is powered with pre-trained LLM models with high accuracy of data and also the efficiency of AI using Gemini AI 
+This tool combines pre-trained LLM models for accurate data summarization with Gemini AI for efficient processing. It also integrates the Google Custom Search API for extracting relevant reference links.
 
 # Text Summarizer : Features 🤖🗓️
 
