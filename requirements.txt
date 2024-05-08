@@ -1,0 +1,8 @@
+langchain
+google.generativeai
+torch
+torchvision
+PyPDF2
+flask
+Streamlit
+transformers
