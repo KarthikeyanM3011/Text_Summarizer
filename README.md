@@ -14,9 +14,13 @@ It is powered with pre-trained LLM models with high accuracy of data and also th
   -  The user can provide data in the form of text or either as a pdf.If pdf the text is extracted using [PyPDF2](https://pypi.org/project/PyPDF2/).
   -  The extracted text is then split into chunks each of size 500 words.
   -  The set of chunks are passed to summarizer function which in turn loads the pre trained model [facebook's bart large cnn](https://huggingface.co/facebook/bart-large-cnn) from Huggingface.
-  -  The chunks are passed to the model by using a stratergy of refine method which uses the previous contexts to maintain the integrity and minimize the information loss.
+  -  The chunks are passed to the model by using a strategy of refine method which uses the previous contexts to maintain the integrity and minimize the information loss.
   -  Next with [Gemini's model](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases) helps us to prettify the given summary to display the result in an attractive way.
   -  Finally based on the summary we suggest some reference links using Google's search engine api [Custom Search API](https://developers.google.com/custom-search/v1/introduction) which helps user to gain deeper knowledge about it.
+
+# Demonstration of the project
+
+https://github.com/KarthikeyanM3011/Text_Summarizer/assets/133127501/afa01117-618c-4f8b-86f8-16983665b552
 
 # Built With 🛠️
 
