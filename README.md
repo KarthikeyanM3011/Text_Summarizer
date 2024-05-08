@@ -20,10 +20,12 @@ It is powered with pre-trained LLM models with high accuracy of data and also th
 
 # Built With 🛠️
 
-  1.  **Frontend - Streamlit:** Our frontend user interface was developed using Streamlit, a powerful Python library for creating web applications with simple Python scripts. Streamlit's intuitive interface allowed us to design interactive and responsive user interfaces effortlessly, streamlining the development process and enhancing user experience. 💻🌐
+  1.  **Frontend - Streamlit:** The frontend user interface was developed using Streamlit, a powerful Python library for creating web applications with simple Python scripts. Streamlit's intuitive interface allowed us to design interactive and responsive user interfaces effortlessly, streamlining the development process and enhancing user experience. 💻🌐
 
-  2.  **LLM Models** - Facebook's Bart: ** The backend for text summarization is done by the pre-trained model [facebook's bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn).It is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder which is trained upon **406M** parameters with a good ROUGE score**📊📚
+  2.  **Flask** : This also has a Code for Flask API.Sijnce Flask is a powerful python framework for API calls you can experiance it with this model.Flask provides safe and secure connection and also it retrives faster when compared to others
 
-  3.  **API's** - We have used Gemini's **[gemini-1.0-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases)** for prettifying the summary and **[Custom Search API](https://developers.google.com/custom-search/v1/introduction)** to get related reference links for more automated and efficient for learning path
+  3.  **LLM Models** - Facebook's Bart: ** The backend for text summarization is done by the pre-trained model [facebook's bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn).It is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder which is trained upon **406M** parameters with a good ROUGE score**📊📚
 
-  4.  **Other Technologies:** - In addition to streamlit , LLM models and API's we have also used **Langchain** for efficient usage of the pre-trained models and also Python a powerful language with concise and expressive syantax.it also has many built-in packages to make our work easy.🐍🚀📦
+  4.  **API's** - We have used Gemini's **[gemini-1.0-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases)** for prettifying the summary and **[Custom Search API](https://developers.google.com/custom-search/v1/introduction)** to get related reference links for more automated and efficient for learning path
+
+  5.  **Other Technologies:** - In addition to streamlit , LLM models and API's we have also used **Langchain** for efficient usage of the pre-trained models and also Python a powerful language with concise and expressive syantax.it also has many built-in packages to make our work easy.🐍🚀📦
