@@ -13,7 +13,7 @@ This tool combines pre-trained LLM models for accurate data summarization with G
 
   -  The user can provide data in the form of text or either as a pdf.If pdf the text is extracted using [PyPDF2](https://pypi.org/project/PyPDF2/).
   -  The extracted text is then split into chunks each of size 500 words.
-  -  The set of chunks are passed to summarizer function which in turn loads the pre trained model [facebook's bart large cnn](https://huggingface.co/facebook/bart-large-cnn) from Huggingface.
+  -  The set of chunks are passed to summarizer function which in turn loads the pre trained model [facebook's bart large cnn](https://huggingface.co/facebook/bart-large-cnn) from Huggingface and [Langchain](https://www.langchain.com/).
   -  The chunks are passed to the model by using a strategy of refine method which uses the previous contexts to maintain the integrity and minimize the information loss.
   -  Next with [Gemini's model](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases) helps us to prettify the given summary to display the result in an attractive way.
   -  Finally based on the summary we suggest some reference links using Google's search engine api [Custom Search API](https://developers.google.com/custom-search/v1/introduction) which helps user to gain deeper knowledge about it.
@@ -29,7 +29,7 @@ https://github.com/KarthikeyanM3011/Text_Summarizer/assets/133127501/afa01117-61
 
   2.  **Flask** : This also has a Code for Flask API.Sijnce Flask is a powerful python framework for API calls you can experiance it with this model.Flask provides safe and secure connection and also it retrives faster when compared to others
 
-  3.  **LLM Models** - Facebook's Bart: ** The backend for text summarization is done by the pre-trained model [facebook's bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn).It is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder which is trained upon **406M** parameters with a good ROUGE score**📊📚
+  3.  **LLM Models** - Facebook's Bart: ** The backend for text summarization is done by the pre-trained model [facebook's bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn) and [Langchain](https://www.langchain.com/).It is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder which is trained upon **406M** parameters with a good ROUGE score**📊📚
 
   4.  **API's** - We have used Gemini's **[gemini-1.0-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview#text-use-cases)** for prettifying the summary and **[Custom Search API](https://developers.google.com/custom-search/v1/introduction)** to get related reference links for more automated and efficient for learning path
 
