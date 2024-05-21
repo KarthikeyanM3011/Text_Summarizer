@@ -38,7 +38,7 @@ def summarize_chunks(chunks):
     return clean(cont)
 
 def clean(content):
-    genai.configure(api_key='AIzaSyCmPlSpjYkUXH95-1oMRNs7QzSRFRe-A4E')
+    genai.configure(api_key='YOUR_API')
     model = genai.GenerativeModel('gemini-1.0-pro')
     def get_ans(query):    
         prompt = PromptTemplate(input_variables=["content"],template = ''' content : {content} . Remove repeating lines and give a correct and prettified content alone as a single paragraph''')
@@ -58,8 +58,8 @@ def summarize_pdf(pdf_path):
     return summarize_chunks(chunks)
 
 def geturl(q):
-    api_key = "AIzaSyBdlN72Py11hJLSiflzzcp9MAZRv0e03pI"
-    search_engine_id = "06e713d09dbd14dbc"
+    api_key = "YOUR_API"
+    search_engine_id = "YOUR_ID"
     query=f'Give me related links about {q} in india'
     url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
     response = requests.get(url)
@@ -71,7 +71,7 @@ def geturl(q):
         return None
 
 def links(content):
-    genai.configure(api_key='AIzaSyCmPlSpjYkUXH95-1oMRNs7QzSRFRe-A4E')
+    genai.configure(api_key='YOUR_API')
     model = genai.GenerativeModel('gemini-1.0-pro')
     prompt = PromptTemplate(input_variables=["content"],template = ''' content : {content} . Give the topic about what the content is speaking in less than 5 words.''')
     input_prompt = prompt.format(content = content)
